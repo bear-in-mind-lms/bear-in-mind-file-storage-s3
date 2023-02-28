@@ -1,0 +1,14 @@
+server:
+  port : 8081
+
+spring:
+  application:
+    name: bear-in-mind-s3-file-storage
+
+s3:
+  endpointUrl: https://s3.amazonaws.com
+  accessKeyId: ${AWS_ACCESS_KEY_ID}
+  secretKey: ${AWS_SECRET_KEY_ID}
+  bucketName: ${AWS_BUCKET_NAME}
+  region: eu-west-3
+
