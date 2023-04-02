@@ -1,6 +1,7 @@
-package com.kwezal.bearinmind.filestorage.s3.aws;
+package com.kwezal.bearinmind.filestorage.s3.controller;
 
 import com.kwezal.bearinmind.filestorage.api.FileApi;
+import com.kwezal.bearinmind.filestorage.s3.service.FileStorageService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
