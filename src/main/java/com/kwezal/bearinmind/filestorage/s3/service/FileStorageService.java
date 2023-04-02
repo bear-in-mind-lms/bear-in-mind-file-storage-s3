@@ -1,13 +1,13 @@
-package com.kwezal.bearinmind.filestorage.s3.aws;
+package com.kwezal.bearinmind.filestorage.s3.service;
 
 import static java.util.Objects.nonNull;
 
 import com.amazonaws.services.s3.AmazonS3;
-import com.kwezal.bearinmind.filestorage.s3.exceptions.InvalidRequestDataException;
+import com.kwezal.bearinmind.exception.InvalidRequestDataException;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.List;
+import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import org.apache.http.entity.ContentType;
 import org.springframework.beans.factory.annotation.Value;
@@ -37,7 +37,7 @@ public class FileStorageService {
     public void delete(String url) {
         final var lastIndexOfUrlSlash = url.lastIndexOf("/");
         if (lastIndexOfUrlSlash < 0 || lastIndexOfUrlSlash == url.length() - 1) {
-            throw new InvalidRequestDataException("url", url, List.of("url"));
+            throw new InvalidRequestDataException("DeleteFileDto", Map.of("url", url));
         }
 
         final var fileName = url.substring(lastIndexOfUrlSlash + 1);
